@@ -35,15 +35,15 @@ export const IncidentCard: React.FC<IncidentCardProps> = ({
         </span>
       </div>
 
-      {/* Always show truncated preview */}
+      
       <div>{truncatedDescription}</div>
 
-      {/* Toggle button */}
+     
       <button className="view-btn" onClick={onViewDetails}>
         {expanded ? "Hide Details" : "View Details"}
       </button>
 
-      {/* Show full description only below button when expanded */}
+      
       {expanded && (
         <div className="incident-details">
           <hr />
