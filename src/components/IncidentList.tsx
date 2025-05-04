@@ -1,7 +1,6 @@
 import React from "react";
 import { Incident } from "../types/incident";
 import { IncidentCard } from "./IncidentCard";
-// import "./IncidentList.css";
 
 interface IncidentListProps {
   incidents: Incident[];
@@ -23,11 +22,26 @@ export const IncidentList: React.FC<IncidentListProps> = ({
   onSort,
 }) => {
   let shown = incidents;
+
+  
   if (filter !== "All") shown = shown.filter((i) => i.severity === filter);
-  if (sort === "Date")
-    shown = [...shown].sort((a, b) => b.reported_at.localeCompare(a.reported_at));
-  if (sort === "Severity")
-    shown = [...shown].sort((a, b) => a.severity.localeCompare(b.severity));
+
+  
+  if (sort === "Date") {
+    shown = [...shown].sort((a, b) => b.reported_at.localeCompare(a.reported_at)); 
+  }
+
+  
+  if (sort === "Severity") {
+    
+    const severityOrder: { [key: string]: number } = {
+      Low: 1,
+      Medium: 2,
+      High: 3,
+    };
+
+    shown = [...shown].sort((a, b) => severityOrder[a.severity] - severityOrder[b.severity]);
+  }
 
   return (
     <div>
@@ -43,6 +57,7 @@ export const IncidentList: React.FC<IncidentListProps> = ({
           <option value="Severity">Sort by Severity</option>
         </select>
       </div>
+
       {shown.length === 0 ? (
         <div className="placeholder-empty">
           <span role="img" aria-label="No incidents">😶‍🌫️</span><br />
