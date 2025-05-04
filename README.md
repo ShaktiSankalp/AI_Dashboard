@@ -13,8 +13,10 @@ A simple and responsive web dashboard for tracking and reporting AI safety incid
 - **Styling:** CSS
 
 
-![Alt text](images/image-2.png);
-![Alt text](images/image-1.png);
+![Alt text](images/image-2.png)
+----------------------------------------------------
+![Alt text](images/image-1.png)
+---------------------------------------------------
 ![Alt text](images/image-3.png);
 
 
