@@ -4,6 +4,9 @@
 
 A simple and responsive web dashboard for tracking and reporting AI safety incidents.
 
+**Deployment:** [Click here to view the app](https://ai-dashboard-4oy2.onrender.com)
+
+
 
 
 ##  Technology Stack
